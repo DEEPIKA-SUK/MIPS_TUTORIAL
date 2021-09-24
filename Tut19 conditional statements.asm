@@ -8,7 +8,7 @@
       addi $a1, $zero, 5
       addi $a2, $zero, 15
       addi $a3, $zero, 5
-      beq $a1,$a3,equal #beq=branch if equal, syntax:cond1, cond2, label(function to called if conditions are met)
+      beq $a1,$a3,equal #beq=branch if equal, syntax:cond1, cond2, label(function to called if conditions are met) #similarly for gretater than less than etc
       beq $a1,$a3,equal
       bne $a1,$a2,notequal #bne=branch if not equal, syntax:cond1, cond2, label(function to called if conditions are met)
       b fun #b=branch
