@@ -1,5 +1,5 @@
 .data
-     arr: .space 10 # .space allocating space in RAM
+     arr: .space 12 # .space allocating space in RAM, 12 because 3elements*(4 byte)
 .text
      addi $s0,$zero,4
      addi $s1,$zero,10
