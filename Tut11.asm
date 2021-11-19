@@ -1,9 +1,39 @@
-#Multiplication Method2
-.data
+#Perform the following switch-case in MIPS32 assembly language. Upon exiting from the switch-case, the program should print the value of ‘i’.
+
+#switch( i )
+
+#{
+
+#case 1: i++ ; // falls through
+
+#case 2: i += 2 ;                               
+
+#break;                                        
+
+#case 3: i += 3 ;
+
+#}
+
+
 .text
-   addi $t0, $zero, 2 #addi=add immediate
-   addi $t1, $zero, 3
-   mult $t1,$t0 #result is stored i a special register lo
-   mflo $a0 #move from LO register
-   li $v0, 1
-   syscall 
+ main:
+   li $v0,5
+   syscall
+   move $t0,$v0
+   case1:
+    bne $t0,1,case2
+    addi $t0,$t0,1
+   case2:
+    bne $t0,2,case3
+    addi $t0,$t0,2
+    j end
+   case3:
+    bne $t0,3,end
+    addi $t0,$t0,3
+    j end
+   end:
+    move $a0,$t0
+    li $v0,1
+    syscall
+    li $v0,10
+    syscall
